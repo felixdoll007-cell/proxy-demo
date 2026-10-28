@@ -1,4 +1,4 @@
-# Reverse-Proxy-Stack
+# Reverse-Proxy-Stack (Branch)
 
 3-Tier-Stack mit Proxy, Backend und Redis-Datenbank, Netze getrennt.
 
