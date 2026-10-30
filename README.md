@@ -41,3 +41,4 @@ docker run --rm \
   alpine tar xzf /quelle/redis-backup.tar.gz -C /ziel
 docker compose start db
 ```
+Gebaut im Rahmen meiner Cloud-Weiterbildung.
