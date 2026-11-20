@@ -42,3 +42,14 @@ docker run --rm \
 docker compose start db
 ```
 Getestet auf Linux Mint mit Docker 29 und Compose 2.40.
+
+## Skripte
+
+Im Ordner `scripts/` liegen zwei Hilfsskripte für Backup und Restore eines Docker-Volumes. Beide bekommen den Volume-Namen als Argument und prüfen vorher, ob er angegeben ist und ob das Volume bzw. das Archiv existiert.
+
+- `backup-neu.sh <volume>` packt den Inhalt des Volumes in `<volume>.tar.gz` im aktuellen Ordner.
+- `restore.sh <volume>` packt `<volume>.tar.gz` aus dem aktuellen Ordner zurück ins Volume.
+
+Beispiel: `./scripts/backup-neu.sh proxy-demo_redisdaten`
+
+Vor dem Backup `redis-cli save` ausführen, sonst steckt der alte Stand im Archiv. Beim Restore muss der Redis-Container vorher gestoppt sein (`docker compose stop db`) und danach wieder gestartet werden.
